@@ -24,7 +24,6 @@ const airport = new Airport({
 	name: "First Airport",
 	country: "US",
   opened: "2020-12-15",
-  terminal: [terminal] //cant put this first. do i change order or is there another way?
 })
 
 airport.save()
@@ -64,8 +63,9 @@ const terminal = new Terminal({
 	flights: [flightOne, flightTwo],
 	capacity: 234324
 })
-
+airport.terminals.push(terminal)
 terminal.save()
+console.log("updated airport", airport)
 console.log("Made a terminal", terminal)
 
 // - Hard code the following data in `server.js`:
